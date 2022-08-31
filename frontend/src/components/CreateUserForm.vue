@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "CreateUserForm",
 
@@ -33,9 +35,19 @@ export default {
       role: ''
     }
   },
-  methods: {
-
+  methods:{
     submitForm(){
+      const api = 'http://localhost:8000/users'
+
+      let formData = new FormData();
+
+      formData.append('first_name', this.first_name);
+      formData.append('last_name', this.last_name);
+      formData.append('email', this.email);
+      formData.append('password', this.password);
+      formData.append('role', this.role);
+
+      axios.post(api, formData, {})
 
     }
   }
