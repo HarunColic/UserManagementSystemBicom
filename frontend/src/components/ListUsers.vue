@@ -1,10 +1,12 @@
 <template>
+  <div>
 
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Users.vue"
+  name: "ListUsers.vue"
 }
 </script>
 
