@@ -1,6 +1,8 @@
 <template>
  <div>
-  <CreateUserForm/>
+  <div>
+    <CreateUserForm/>
+  </div>
  </div>
 </template>
 

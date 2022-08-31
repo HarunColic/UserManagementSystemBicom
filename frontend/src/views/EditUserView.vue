@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import CreateUserForm from "@/components/CreateUserForm";
 import axios from "axios";
 export default {
   name: "EditUserView",
@@ -38,7 +37,6 @@ export default {
     }
   },
   components: {
-    CreateUserForm
   },
   methods:{
     submitForm() {

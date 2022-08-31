@@ -1,21 +1,21 @@
 <template>
-  <form @submit="submitForm">
+  <form @submit.prevent="submitForm">
     <label>First Name</label>
     <input type="text" required v-model="first_name">
-
+    <br>
     <label>Last Name</label>
     <input type="text" required v-model="last_name">
-
+    <br>
     <label>Email</label>
     <input type="email" required v-model="email">
-
+    <br>
     <label>Password</label>
     <input type="password" required v-model="password">
-
+    <br>
     <label>Role</label>
-    <select v-model="role" required>
-
+    <select v-model="role">
     </select>
+    <br>
     <input type="submit" value="submit">
   </form>
 </template>
@@ -47,7 +47,11 @@ export default {
       formData.append('password', this.password);
       formData.append('role', this.role);
 
-      axios.post(api, formData, {})
+      try {
+        axios.post(api, formData, {})
+      }catch (e){
+        console.log(e)
+      }
 
     }
   }
