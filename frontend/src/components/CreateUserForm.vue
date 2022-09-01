@@ -14,6 +14,9 @@
     <br>
     <label>Role</label>
     <select v-model="role">
+      <option v-for="r in roles" :key="r.id" >
+        {{r.name}}
+      </option>
     </select>
     <br>
     <input type="submit" value="submit">
@@ -32,8 +35,12 @@ export default {
       last_name: '',
       email: '',
       password: '',
-      role: ''
+      role: '',
+      roles: null
     }
+  },
+  beforeMount() {
+    this.fetchRoles()
   },
   methods:{
     submitForm(){
@@ -53,6 +60,14 @@ export default {
         console.log(e)
       }
 
+    },
+
+    fetchRoles(){
+      const api = 'http://localhost:8000/roles'
+
+      axios.get(api).then((response) => {
+        this.roles = response.data
+      })
     }
   }
 }

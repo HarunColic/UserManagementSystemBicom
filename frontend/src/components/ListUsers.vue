@@ -4,7 +4,7 @@
       <p>{{user.first_name}}</p><br>
       <p>{{user.last_name}}</p><br>
       <p>{{user.email}}</p><br>
-      <router-link :to="{name: 'editUser', params: {id: user.id}}">Edit User</router-link> |
+      <router-link :to="{name: 'editUser', params: {id: user.id}}">Edit User</router-link>
 
     </div>
   </div>
